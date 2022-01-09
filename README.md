@@ -4,7 +4,7 @@ Adds a functional table component to your React application using a simple compo
 
 Simply add the Simple Table component like so:
 
-```
+```javascript
 <SimpleTable data={tableData} />
 ```
 
@@ -14,7 +14,7 @@ Where the `tableData` prop is an object with the following properties:
 
 Example: 
 
-```
+```javascript
 columns: [
       {
         label: "Name",
@@ -35,7 +35,7 @@ columns: [
 
 Example: 
 
-```
+```javascript
 rows: [
 	["Peter Johnson", "peter@gmail.com", "3093970178"],
 	["Test Person", "test@yaho.com", "1234561234"],
