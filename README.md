@@ -31,7 +31,7 @@ columns: [
 ]
 ```
 
-## `rows`: An 2 dimensional array of "rows" of data, with the second level of array being each row. 
+## `rows`: A 2 dimensional array of "rows" of data, with the second level of array being each row. 
 
 Example: 
 
@@ -44,3 +44,5 @@ rows: [
 	["Michael","Test@gmail.com","6096781234"]
 ]
 ```
+
+Open `/src/App.js` for a working example. 
