@@ -9,7 +9,6 @@ const SimpleTable = (props) => {
 
 	const sortColumn = (event,column) => {
 		event.preventDefault();
-		console.log(column);
 		setSortedByColumn(column);
 		setSortAsc(!sortAsc);
 	}
@@ -19,6 +18,7 @@ const SimpleTable = (props) => {
 			<TableHeader 
 				data={props.data.columns} 
 				sortColumn={sortColumn}
+				sortAsc={sortAsc}
 			/>
 			<TableBody
 				data={props.data.rows} 

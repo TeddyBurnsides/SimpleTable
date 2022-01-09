@@ -1,6 +1,4 @@
-
-
-import SimpleTable from './SimpleTable';
+import SimpleTable from './simpleTable/SimpleTable';
 import './App.css';
 
 const App = () => {
@@ -12,26 +10,22 @@ const App = () => {
       },
       {
         label: "Email",
-        sortable: true
+        sortable: false
       },
       {
         label: "Phone Number",
-        sortable: false
+        sortable: true
       }
     ],
     rows: [
       ["Theodore", "theo.ew@gmail.com", "3093970178"],
       ["Test Person", "test@yaho.com", "1234561234"],
       ["New Name", "", "1237891234"],
-      ["Zan","z@gmail.com","4569081234"]
+      ["Zan","z@gmail.com","4569081234"],
+      ["Michael","Test@gmail.com","6096781234"]
     ]
   }
-  return (
-    <div className="App">
-      <h1>Simple table</h1>
-      <SimpleTable data={tableData} />
-    </div>
-  );
+  return <SimpleTable data={tableData} />
 }
 
 export default App;

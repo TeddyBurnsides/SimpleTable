@@ -10,15 +10,16 @@ const TableHeader = (props) => {
 					sortable={column.sortable} 
 					columnNumber={index} 
 					sortColumn={props.sortColumn}
+					sortAsc={props.sortAsc}
 				/>
 			</th>
 		)
 	})
 
 	return (
-		<thead><tr>
-			{columns}
-		</tr></thead>
+		<thead>
+			<tr>{columns}</tr>
+		</thead>
 	)
 }
 
