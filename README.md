@@ -10,7 +10,7 @@ Simply add the Simple Table component like so:
 
 Where the `tableData` prop is an object with the following properties:
 
-`columns': This is an array of column names and a boolean flag that indicates if the columns should allow sorting. 
+## `columns`: This is an array of column names and a boolean flag that indicates if the columns should allow sorting. 
 
 Example: 
 
@@ -31,7 +31,7 @@ columns: [
 ]
 ```
 
-`rows': An 2 dimensional array of "rows" of data, with the second level of array being each row. 
+## `rows`: An 2 dimensional array of "rows" of data, with the second level of array being each row. 
 
 Example: 
 
