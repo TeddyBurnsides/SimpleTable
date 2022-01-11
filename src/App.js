@@ -24,6 +24,8 @@ const App = () => {
       ["Zan","z@gmail.com","4569081234"],
       ["Michael","Test@gmail.com","6096781234"]
     ]
+    ,
+    maxRows: 4
   }
   return <SimpleTable data={tableData} />
 }

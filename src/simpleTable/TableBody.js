@@ -2,26 +2,35 @@ import TableRow from "./TableRow";
 
 const TableBody = (props) => {
 
-	let sortedRows = props.data;
-	
-	const sortedByColumn = props.sortedByColumn;
-	if (sortedByColumn !== null) {
-		if (props.sortAsc) {
-			sortedRows.sort((a,b) => a[sortedByColumn] > b[sortedByColumn]);
-		} else {
-			sortedRows.sort((a,b) => a[sortedByColumn] < b[sortedByColumn]);
-		}
+	let rows = truncate(props.data,props.maxRows,props.showAll); // trim off extra rows
+
+	rows = sort(rows,props.sortAsc,props.columnToSortBy); // sort rows
+
+	rows = rows.map((row,index) => <TableRow key={index} data={row} /> );
+
+	return <tbody>{rows}</tbody>;
+}
+
+/**Truncate data to only show desired number of rows */
+const truncate = (rows, numberOfRowsToShow,showAllRows) => {
+	if (!showAllRows) {
+		return rows.slice(0,numberOfRowsToShow);
+	} else {
+		return rows;
 	}
+}
 
-	const rows = sortedRows.map((row,index) => {
-		return (
-			<TableRow key={index} data={row} />
-		)
-	})
+/** Sort provided rows */
+const sort = (rows,ascending,columnToSortBy) => {
 
-	return (
-		<tbody>{rows}</tbody>
-	)
+	if (columnToSortBy === null) return rows; // no changes
+	
+	const sortedRows = rows.sort((a,b) => {
+		return (ascending) ? a[columnToSortBy] > b[columnToSortBy] : a[columnToSortBy] < b[columnToSortBy];
+	});
+
+	return sortedRows;
+	
 }
 
 export default TableBody;
