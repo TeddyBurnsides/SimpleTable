@@ -1,23 +1,61 @@
 body {
   padding:100px;
+  background:#fae1dd;
 }
 table {
-  border: solid 1px #DDEEEE;
+  border: 0;
   border-collapse: collapse;
   border-spacing: 0;
-  font: normal 13px Arial, sans-serif;
+  background:#fff;
+  overflow:hidden;
+  box-shadow:0 3px 15px rgba(0,0,0,.3);
+  font: 400 12pt -apple-system,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue','Helvetica','Arial',sans-serif;
+}
+table thead {
+  background: #2a9d8f;
+  border: 1px solid #2a9d8f;
 }
 table thead th {
-  background-color: #DDEFEF;
-  border: solid 1px #DDEEEE;
-  color: #336B6B;
-  padding: 10px;
+  color: #fff;
+  border:0;
+  padding: 12px;
   text-align: left;
-  text-shadow: 1px 1px 1px #fff;
+  font-weight:300;
+  line-height:24px;
+  font-size:13pt;
 }
 table tbody td {
-  border: solid 1px #DDEEEE;
+  border: solid 1px #ccc;
   color: #333;
   padding: 10px;
-  text-shadow: 1px 1px 1px #fff;
+  line-height:24px;
+}
+th button {
+  cursor:pointer;
+  margin:5px 0 0 15px;
+  float:right;
+  background:0;
+  padding:0;
+  border:0;
+  font-size:10pt;
+  color:rgba(255,255,255,.3);
+}
+th button:hover {
+  color:rgba(255,255,255,.7);
+}
+th button.active {
+  color:#fff;
+}
+button.simpleTable-showAll {
+  margin:20px 0 0 0;
+  background:#264653;
+  color:#C4CDD0;
+  border:0;
+  padding:6px 8px;
+  font-size:10pt;
+  border-radius:2px;
+  cursor:pointer;
+}
+button.simpleTable-showAll:hover {
+  color:#fff;
 }

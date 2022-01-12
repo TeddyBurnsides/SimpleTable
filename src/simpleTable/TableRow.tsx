@@ -1,6 +1,6 @@
-const TableRow = (props) => {
+const TableRow = (props: any) => {
 
-	const row = props.data.map((cell,index) => {
+	const row = props.data.map((cell: string, index: number ) => {
 		return (
 			<td key={index}>{cell}</td>
 		)
