@@ -6,16 +6,30 @@ import { Direction } from './types/sortDirection';
 
 const SimpleTable = (props: any) => {
 	
-	const [sortInfo, setSortInfo] = useState({enabled: false, column:0, direction:Direction.Desc});
+	
+	let initSortData = new Array(props.data.columns.length);
+	for (let i=0; i<initSortData.length; i++) {
+		initSortData[i] = {enabled: false, column: i, direction:Direction.Desc}
+	}
+
+	const [sortInfo, setSortInfo] = useState(initSortData);
+
 	const [allRowsVisible, makeAllRowsVisible] = useState(false);
 
 	const toggleSortDirection = (event: React.ChangeEvent<HTMLButtonElement>, column: number) => {
 		event.preventDefault();
-		setSortInfo({
-			enabled:true,
-			column: column,
-			direction: (sortInfo.direction === Direction.Asc) ? Direction.Desc : Direction.Asc
-		})
+
+		let array = [...sortInfo];
+		for (let i=0; i<array.length; i++) {
+			if (column === i) {
+				array[i].enabled = true;
+				array[i].direction = (sortInfo[i].direction === Direction.Asc) ? Direction.Desc : Direction.Asc;
+			} else {
+				array[i].enabled = false;
+			}
+		}
+
+		setSortInfo([...array])
 	}
 	
 	const showAllRows = (event: React.ChangeEvent<HTMLButtonElement>) => {
@@ -43,7 +57,7 @@ const SimpleTable = (props: any) => {
 				numRows={props.data.rows.length}
 				maxRows={props.data.maxRows}
 				showAllRows={showAllRows}
-				showAll={allRowsVisible}
+				allRowsVisible={allRowsVisible}
 			/>
 		</>
 	)

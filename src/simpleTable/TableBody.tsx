@@ -3,9 +3,19 @@ import {sort, truncate} from './utils';
 
 const TableBody = (props: any) => {
 
-	let rows = truncate(props.data,props.maxRows,props.showAll); // trim off extra rows
+	let rows = props.data;
+	
+	if (!props.showAll) {
+		rows = truncate(rows,props.maxRows);
+	}
 
-	rows = sort(rows,props.sortInfo.direction,props.sortInfo.column); // sort rows
+	// if a column is enabled for sorting, use it
+	const enabledSortInfo = props.sortInfo.filter((el: any) => el.enabled === true);
+	if (typeof enabledSortInfo[0] !== 'undefined') {
+		
+		rows = sort(rows, enabledSortInfo[0].direction, enabledSortInfo[0].column);
+		
+	}
 
 	const rowElements = rows.map((row: string, index: number) => {
 		return <TableRow key={index} data={row} /> 

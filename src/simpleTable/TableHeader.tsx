@@ -10,7 +10,7 @@ const TableHeader = (props: any) => {
 				<SortButton 
 					isSortable={column.isSortable}  // boolean for if is column sortable
 					columnNumber={index} 
-					sortInfo={props.sortInfo}
+					sortInfo={props.sortInfo[index]}
 					toggleSortDirection={props.toggleSortDirection}
 					sortButtonText={props.sortButtonText}
 				/>

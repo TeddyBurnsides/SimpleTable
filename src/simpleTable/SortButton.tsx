@@ -1,9 +1,10 @@
 import {Direction} from './types/sortDirection';
+import React from 'react';
 
 const SortButton = (props: any) => {
 
 	// populate an 'active' class when the column is being sorted by 
-	const activeClass = (props.columnNumber === props.sortInfo.column) ? 'active' : '';
+	const activeClass = (props.sortInfo.enabled && props.columnNumber === props.sortInfo.column) ? 'active' : '';
 
 	if (props.isSortable) {
 		return (

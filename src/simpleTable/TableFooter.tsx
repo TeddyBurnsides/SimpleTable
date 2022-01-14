@@ -1,9 +1,16 @@
-const TableFooter = (props: any) => {
+interface footerProps {
+	numRows: number,
+	maxRows: number,
+	allRowsVisible: boolean
+	showAllRows: Function
+}
+
+const TableFooter = ({numRows, maxRows, allRowsVisible, showAllRows}: footerProps) => {
 	
-	const buttonText = (props.numRows > props.maxRows && !props.showAll) ? 'Display all rows' : 'Display first ' + props.maxRows + ' rows';
+	const buttonText = (numRows > maxRows && !allRowsVisible) ? 'Display all' : 'Display less';
 	
 	return (
-		<button className='simpleTable-showAll' onClick={(event) => props.showAllRows(event)}>{buttonText}</button>
+		<button className='simpleTable-showAll' onClick={(event) => showAllRows(event)}>{buttonText}</button>
 	)
 }
 
