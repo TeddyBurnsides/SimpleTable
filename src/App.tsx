@@ -32,7 +32,12 @@ const App = () => {
       desc: '▼'
     }
   }
-  return <SimpleTable data={tableData} />
+  return (
+    <>
+      <h1>Simple Table Demo</h1>
+      <SimpleTable data={tableData} />
+    </>
+  );
 }
 
 export default App;
