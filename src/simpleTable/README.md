@@ -4,7 +4,7 @@ A simple table component for your React JS project that allows for column sortin
 
 ## How to install:
 
-###Step 1
+### Step 1
 
 Install the package: 
 
@@ -12,7 +12,7 @@ Install the package:
 npm install @theowiersema/minimalreacttable@0.0.1
 ```
 
-###Step 2
+### Step 2
 
 Add the component to your React project: 
 
@@ -22,7 +22,7 @@ Add the component to your React project:
 
 Where the `tableData` variable passed to the `data` prop is an object with the following properties:
 
-####`columns`
+#### `columns`
 An array of column names and a boolean flag that indicates if the columns should allow sorting. 
 
 Example: 
@@ -44,7 +44,7 @@ columns: [
 ]
 ```
 
-####`rows`
+#### `rows`
 A 2 dimensional array of "rows" of data, with the second level of array being each row. 
 
 Example: 
@@ -59,10 +59,10 @@ rows: [
 ]
 ```
 
-####`maxrows`
+#### `maxrows`
 The maximum number of rows to display in minimized mode. Leave empty to disable minimized mode and always show all rows. 
 
-####`sortButtonText`
+#### `sortButtonText`
 An object with properties `asc` and `desc` that contains the text that will be used for the sort buttons. This will change based on whether you are sorting *ascending* or *descending*. 
 
 Example:
@@ -73,6 +73,6 @@ sortButtonText: {
 }
 ```
 
-##See in use
+## See in use
 
 Open `/src/App.js` for a working example. 
