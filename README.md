@@ -73,6 +73,6 @@ sortButtonText: {
 }
 ```
 
-## See in use
+## Demo
 
-Open `/src/App.js` for a working example. 
+Open [the demo](https://minimal-react-table.herokuapp.com/) to see a working example or browse to [/src/App.tsx](https://github.com/theowiersema/SimpleTable/blob/main/src/App.tsx) to see the code in action.
