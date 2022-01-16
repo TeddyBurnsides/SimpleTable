@@ -1,6 +1,7 @@
 import TableHeader from './TableHeader';
 import TableBody from './TableBody';
 import TableFooter from './TableFooter';
+import SearchTable from './SearchTable';
 import { useState } from 'react';
 import { Direction } from './types/sortDirection';
 import { Itable } from './types/interfaces';
@@ -38,8 +39,21 @@ const SimpleTable = ({data}: Itable) => {
 		makeAllRowsVisible(!allRowsVisible);
 	}
 
+	const [ searchValue, setSearchValue ] = useState<string | undefined>(undefined);
+
+	const triggerSearch = (value: string) => {
+		setSearchValue(value);
+	}
+
 	return (
 		<>
+			<div id="tools">
+				<h1>{data.title}</h1>
+				<SearchTable
+					triggerSearch={triggerSearch}
+					enabled={data.enableSearch}
+				/>
+			</div>
 			<table>
 				<TableHeader 
 					columnNames={data.columns}
@@ -52,6 +66,7 @@ const SimpleTable = ({data}: Itable) => {
 					sortInfo={sortInfo}
 					maxRows={data.maxRows}
 					showAll={allRowsVisible}
+					searchValue={searchValue}
 				/>
 			</table>
 			<TableFooter 

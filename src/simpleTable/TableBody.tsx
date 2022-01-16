@@ -1,8 +1,8 @@
 import TableRow from './TableRow';
-import {sort, truncate} from './utils';
+import {sort, truncate, rowContainsValue} from './utils';
 import { ItableBody, IsortInfo } from './types/interfaces';
 
-const TableBody = ({data, sortInfo, maxRows, showAll}: ItableBody) => {
+const TableBody = ({data, sortInfo, maxRows, showAll, searchValue}: ItableBody) => {
 
 	let rows = data;
 	
@@ -19,7 +19,12 @@ const TableBody = ({data, sortInfo, maxRows, showAll}: ItableBody) => {
 	}
 
 	const rowElements = rows.map((row: string[], index: number) => {
-		return <TableRow key={index} data={row} /> 
+		if (typeof searchValue === 'undefined' || searchValue === '' || rowContainsValue(row,searchValue)) {
+			
+			return <TableRow key={index} data={row} /> 
+		} else {
+			return null;
+		}
 	});
 
 	return <tbody>{rowElements}</tbody>;

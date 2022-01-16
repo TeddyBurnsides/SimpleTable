@@ -20,3 +20,11 @@ export const sort = (rows: string[][], direction: Direction, columnToSortBy: num
 	return sortedRows;
 	
 }
+
+export const rowContainsValue = (row: string[], value: string): boolean => {
+	let quit = false;
+	for (let i=0; i<row.length&&!quit; i++) {
+		if (row[i].toLowerCase().includes(value.toLowerCase())) quit=true;
+	}
+	return quit;
+}

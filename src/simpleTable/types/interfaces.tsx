@@ -42,7 +42,8 @@ export interface ItableBody {
 	data: string[][], 
 	sortInfo: IsortInfo[],
 	maxRows?: number,
-	showAll: boolean
+	showAll: boolean,
+	searchValue?: string
 }
 
 export interface ItableRow {
@@ -53,9 +54,16 @@ interface Idata {
 	columns: Icolumn[],
 	rows: string[][],
 	maxRows?: number,
-	sortButtonText?: IsortButtonText	
+	sortButtonText?: IsortButtonText,
+	title?: string,
+	enableSearch?: boolean
 }
 
 export interface Itable {
 	data: Idata
+}
+
+export interface IsearchTable {
+	triggerSearch: Function,
+	enabled?: boolean
 }

@@ -6,8 +6,29 @@ body {
 h1 {
   font-weight:700;
   color:#264653;
-  margin:0 0 25px 0;
   padding:0;
+  line-height:40px;
+  margin:0;
+}
+#tools {
+  display:flex;
+  justify-content:space-between;
+  margin:0 0 25px 0;
+}
+input[type="search"] {
+  background:#fff;
+  border:1px solid #2a9d8f;
+  padding:8px 12px;
+  font-size:11pt;
+  margin:0;
+  width:200px;
+  color:#264653;
+  border-radius:3px;
+  opacity:.7;
+  height:40px;
+}
+input[type="search"]:focus {
+  opacity:1;
 }
 table {
   border: 0;
@@ -16,6 +37,7 @@ table {
   background:#fff;
   overflow:hidden;
   box-shadow:0 3px 15px rgba(0,0,0,.3);
+  width:100%;
 }
 table thead {
   background: #2a9d8f;
@@ -36,15 +58,26 @@ table tbody td {
   padding: 10px;
   line-height:24px;
 }
-th button {
+th button.sortButton {
   cursor:pointer;
-  margin:0 0 0 10px;
+  margin:0 0 0 15px;
   float:right;
   background:0;
   padding:5px;
   border:0;
   font-size:10pt;
   color:rgba(255,255,255,.3);
+}
+th button.filterButton {
+  cursor:pointer;
+  margin:0 0 0 2px;
+  background:0;
+  padding:5px;
+  border:0;
+  line-height:1em;
+}
+th button.filterButton path {
+  fill:rgba(255,255,255,.3);
 }
 th button:hover {
   color:rgba(255,255,255,.7);

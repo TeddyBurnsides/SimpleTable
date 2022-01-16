@@ -10,7 +10,7 @@ const SortButton = ({isSortable, columnNumber, sortInfo, toggleSortDirection, so
 
 	if (isSortable) {
 		return (
-			<button className={activeClass} onClick={(event) => toggleSortDirection(event,columnNumber)}>
+			<button className={activeClass + ' sortButton'} onClick={(event) => toggleSortDirection(event,columnNumber)}>
 				{(sortInfo.direction === Direction.Asc) ? buttonText.asc : buttonText.desc}
 			</button>
 		)

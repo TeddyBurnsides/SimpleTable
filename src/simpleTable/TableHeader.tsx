@@ -14,6 +14,7 @@ const TableHeader = ({columnNames, sortInfo, toggleSortDirection, sortButtonText
 					toggleSortDirection={toggleSortDirection}
 					sortButtonText={sortButtonText}
 				/>
+				
 			</th>
 		)
 	})
