@@ -1,13 +1,14 @@
 # Simple Table React Component
 
-A simple table component for your React JS project that allows for column sorting. 
+A table component for your React JS project that allows for column sorting and searching. 
 
 ![Screenshot of Simple Table](https://github.com/theowiersema/SimpleTable/blob/main/public/screenshot.png?raw=true)
 
 Open [the demo](https://minimal-react-table.herokuapp.com/) to see a working example or browse to [/src/App.tsx](https://github.com/theowiersema/SimpleTable/blob/main/src/App.tsx) in this repository to see the code in action.
 
-## How to install
+Note that while the demo includes additional CSS styling, installing the package will not add any CSS to your project. The styling from `App.css` can be utilized if desired. 
 
+## How to install
 
 ```
 npm install @theowiersema/minimalreacttable
@@ -23,7 +24,7 @@ Add the component to your React project:
 
 Where the `tableData` variable passed to the `data` prop is an object with the following properties:
 
-#### `columns`
+### `columns`
 
 **Type:** `{label: string, sortable: boolean}`
 
@@ -50,7 +51,7 @@ columns: [
 ]
 ```
 
-#### `rows`
+### `rows`
 
 **Type:** `string[][]`
 
@@ -70,7 +71,7 @@ rows: [
 ]
 ```
 
-#### `maxrows`
+### `maxrows`
 
 **Type:** `number`
 
@@ -80,7 +81,7 @@ rows: [
 
 The maximum number of rows to display in minimized mode. Leave empty to disable minimized mode and always show all rows. 
 
-#### `sortButtonText`
+### `sortButtonText`
 
 **Type:** `{asc: string, desc: string}`
 
@@ -90,7 +91,7 @@ The maximum number of rows to display in minimized mode. Leave empty to disable 
 
 An object with properties `asc` and `desc` that contains the text that will be used for the sort buttons. This will change based on whether you are sorting *ascending* or *descending*. 
 
-#### `enableSearch`
+### `enableSearch`
 
 **Type:** `boolean`
 
@@ -100,7 +101,7 @@ An object with properties `asc` and `desc` that contains the text that will be u
 
 If true, a search field will be visible to filter rows by a user-entered string. 
 
-#### `title`
+### `title`
 
 **Type:** `string`
 
