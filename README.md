@@ -2,7 +2,7 @@
 
 A simple table component for your React JS project that allows for column sorting. 
 
-![alt text](https://github.com/theowiersema/SimpleTable/blob/public/screenshot.png?raw=true)
+![Screenshot of Simple Table](https://github.com/theowiersema/SimpleTable/blob/main/public/screenshot.png?raw=true)
 
 Open [the demo](https://minimal-react-table.herokuapp.com/) to see a working example or browse to [/src/App.tsx](https://github.com/theowiersema/SimpleTable/blob/main/src/App.tsx) in this repository to see the code in action.
 
