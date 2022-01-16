@@ -1,15 +1,17 @@
-import {Direction} from './types/sortDirection';
-import React from 'react';
+import { Direction } from './types/sortDirection';
+import { IsortButtonProps } from './types/interfaces';
 
-const SortButton = (props: any) => {
+const SortButton = ({isSortable, columnNumber, sortInfo, toggleSortDirection, sortButtonText}: IsortButtonProps) => {
 
 	// populate an 'active' class when the column is being sorted by 
-	const activeClass = (props.sortInfo.enabled && props.columnNumber === props.sortInfo.column) ? 'active' : '';
+	const activeClass = (sortInfo.enabled && columnNumber === sortInfo.column) ? 'active' : '';
 
-	if (props.isSortable) {
+	const buttonText = (sortButtonText !== undefined) ? sortButtonText : {asc: '▲',desc: '▼'}
+
+	if (isSortable) {
 		return (
-			<button className={activeClass} onClick={(event) => props.toggleSortDirection(event,props.columnNumber)}>
-				{(props.sortInfo.direction === Direction.Asc) ? props.sortButtonText.asc : props.sortButtonText.desc}
+			<button className={activeClass} onClick={(event) => toggleSortDirection(event,columnNumber)}>
+				{(sortInfo.direction === Direction.Asc) ? buttonText.asc : buttonText.desc}
 			</button>
 		)
 	} else {

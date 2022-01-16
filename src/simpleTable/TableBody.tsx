@@ -1,23 +1,24 @@
 import TableRow from './TableRow';
 import {sort, truncate} from './utils';
+import { ItableBody, IsortInfo } from './types/interfaces';
 
-const TableBody = (props: any) => {
+const TableBody = ({data, sortInfo, maxRows, showAll}: ItableBody) => {
 
-	let rows = props.data;
+	let rows = data;
 	
-	if (!props.showAll) {
-		rows = truncate(rows,props.maxRows);
+	if (!showAll) {
+		rows = truncate(rows,maxRows);
 	}
 
 	// if a column is enabled for sorting, use it
-	const enabledSortInfo = props.sortInfo.filter((el: any) => el.enabled === true);
+	const enabledSortInfo = sortInfo.filter((el: IsortInfo) => el.enabled === true);
 	if (typeof enabledSortInfo[0] !== 'undefined') {
 		
 		rows = sort(rows, enabledSortInfo[0].direction, enabledSortInfo[0].column);
 		
 	}
 
-	const rowElements = rows.map((row: string, index: number) => {
+	const rowElements = rows.map((row: string[], index: number) => {
 		return <TableRow key={index} data={row} /> 
 	});
 

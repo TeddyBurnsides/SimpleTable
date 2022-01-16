@@ -2,17 +2,16 @@
 
 A simple table component for your React JS project that allows for column sorting. 
 
-## How to install:
+Open [the demo](https://minimal-react-table.herokuapp.com/) to see a working example or browse to [/src/App.tsx](https://github.com/theowiersema/SimpleTable/blob/main/src/App.tsx) in this repository to see the code in action.
 
-### Step 1
+## How to install
 
-Install the package: 
 
 ```
-npm install @theowiersema/minimalreacttable@0.0.1
+npm install @theowiersema/minimalreacttable
 ```
 
-### Step 2
+## How to use
 
 Add the component to your React project: 
 
@@ -23,6 +22,9 @@ Add the component to your React project:
 Where the `tableData` variable passed to the `data` prop is an object with the following properties:
 
 #### `columns`
+
+*Required*
+
 An array of column names and a boolean flag that indicates if the columns should allow sorting. 
 
 Example: 
@@ -45,6 +47,9 @@ columns: [
 ```
 
 #### `rows`
+
+*Required*
+
 A 2 dimensional array of "rows" of data, with the second level of array being each row. 
 
 Example: 
@@ -60,19 +65,23 @@ rows: [
 ```
 
 #### `maxrows`
+
+*Optional*
+
 The maximum number of rows to display in minimized mode. Leave empty to disable minimized mode and always show all rows. 
 
-#### `sortButtonText`
+Default if undefined is to display all rows.
+
+#### `sortButtonText` 
+
+*Optional*
+
 An object with properties `asc` and `desc` that contains the text that will be used for the sort buttons. This will change based on whether you are sorting *ascending* or *descending*. 
 
-Example:
+Default if  undefined:
 ```
-sortButtonText: {
+{
   asc: '▲',
   desc: '▼'
 }
 ```
-
-## Demo
-
-Open [the demo](https://minimal-react-table.herokuapp.com/) to see a working example or browse to [/src/App.tsx](https://github.com/theowiersema/SimpleTable/blob/main/src/App.tsx) to see the code in action.

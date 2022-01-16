@@ -1,6 +1,8 @@
-const TableRow = (props: any) => {
+import { ItableRow } from './types/interfaces';
 
-	const row = props.data.map((cell: string, index: number ) => {
+const TableRow = ({data}: ItableRow) => {
+
+	const row = data.map((cell: string, index: number ) => {
 		return (
 			<td key={index}>{cell}</td>
 		)

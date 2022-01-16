@@ -1,18 +1,18 @@
 import SortButton from './SortButton';
-import { columnDefs } from './types/columnsDefs';
+import { ItableHeader , Icolumn} from './types/interfaces';
 
-const TableHeader = (props: any) => {
+const TableHeader = ({columnNames, sortInfo, toggleSortDirection, sortButtonText}: ItableHeader) => {
 
-	const columnHeaders = props.columnNames.map((column: columnDefs, index: number) => {
+	const columnHeaders = columnNames.map((column: Icolumn, index: number) => {
 		return (
 			<th key={index}>
 				{column.label}
 				<SortButton 
-					isSortable={column.isSortable}  // boolean for if is column sortable
+					isSortable={column.isSortable}
 					columnNumber={index} 
-					sortInfo={props.sortInfo[index]}
-					toggleSortDirection={props.toggleSortDirection}
-					sortButtonText={props.sortButtonText}
+					sortInfo={sortInfo[index]}
+					toggleSortDirection={toggleSortDirection}
+					sortButtonText={sortButtonText}
 				/>
 			</th>
 		)

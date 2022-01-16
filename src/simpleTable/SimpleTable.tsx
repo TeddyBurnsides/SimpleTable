@@ -3,11 +3,12 @@ import TableBody from './TableBody';
 import TableFooter from './TableFooter';
 import { useState } from 'react';
 import { Direction } from './types/sortDirection';
+import { Itable } from './types/interfaces';
 
-const SimpleTable = (props: any) => {
+const SimpleTable = ({data}: Itable) => {
 	
 	
-	let initSortData = new Array(props.data.columns.length);
+	let initSortData = new Array(data.columns.length);
 	for (let i=0; i<initSortData.length; i++) {
 		initSortData[i] = {enabled: false, column: i, direction:Direction.Desc}
 	}
@@ -41,21 +42,21 @@ const SimpleTable = (props: any) => {
 		<>
 			<table>
 				<TableHeader 
-					columnNames={props.data.columns}
+					columnNames={data.columns}
 					sortInfo={sortInfo}
 					toggleSortDirection={toggleSortDirection}
-					sortButtonText={props.data.sortButtonText}				
+					sortButtonText={data.sortButtonText}				
 				/>
 				<TableBody
-					data={props.data.rows} 
+					data={data.rows} 
 					sortInfo={sortInfo}
-					maxRows={props.data.maxRows}
+					maxRows={data.maxRows}
 					showAll={allRowsVisible}
 				/>
 			</table>
 			<TableFooter 
-				numRows={props.data.rows.length}
-				maxRows={props.data.maxRows}
+				numRows={data.rows.length}
+				maxRows={data.maxRows}
 				showAllRows={showAllRows}
 				allRowsVisible={allRowsVisible}
 			/>
