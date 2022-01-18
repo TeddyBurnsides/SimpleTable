@@ -24,6 +24,15 @@ Add the component to your React project:
 
 Where the `tableData` variable passed to the `data` prop is an object with the following properties:
 
+* [`columns`](#columns)
+* [`rows`](#rows)
+* [`maxrows`](#maxrows)
+* [`sortButtonText`](#sortButtonText)
+* [`enableSearch`](#enableSearch)
+* [`title`](#title)
+
+## Prop Documentation
+
 ### `columns`
 
 **Type:** `{label: string, sortable: boolean}`
