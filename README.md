@@ -4,9 +4,7 @@ A table component for your React JS project that allows for column sorting and s
 
 ![Screenshot of Simple Table](https://github.com/theowiersema/SimpleTable/blob/main/public/screenshot.png?raw=true)
 
-Open [the demo](https://minimal-react-table.herokuapp.com/) to see a working example or browse to [/src/App.tsx](https://github.com/theowiersema/SimpleTable/blob/main/src/App.tsx) in this repository to see the code in action.
-
-Note that while the demo includes additional CSS styling, installing the package will not add any CSS to your project. The styling from `App.css` can be utilized if desired. 
+Check out [a working demo](https://minimal-react-table.herokuapp.com/) (with added styles) or view the [component implementation code](https://github.com/theowiersema/SimpleTable/blob/main/src/App.tsx).
 
 ## How to install
 
