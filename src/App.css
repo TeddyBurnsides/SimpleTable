@@ -93,7 +93,7 @@ table thead {
 table thead th {
   color: #fff;
   border:0;
-  padding: 12px;
+  padding: 15px 20px 10px 20px;
   text-align: left;
   font-weight:300;
   line-height:24px;
@@ -109,7 +109,7 @@ table tbody tr:nth-child(even) {
 
 table tbody td {
   color: #333;
-  padding: 12px;
+  padding: 12px 20px;
   line-height:24px;
 }
 table tbody td b {
