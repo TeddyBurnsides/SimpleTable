@@ -47,7 +47,8 @@ export interface ItableBody {
 }
 
 export interface ItableRow {
-	data: string[]
+	data: string[],
+	searchValue: string | undefined
 }
 
 interface Idata {

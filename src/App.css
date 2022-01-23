@@ -84,6 +84,7 @@ table {
   box-shadow:0 3px 15px rgba(0,0,0,.3);
   width:100%;
   border-radius:3px;
+  table-layout: fixed;
 }
 table thead {
   background: #2a9d8f;
@@ -110,6 +111,9 @@ table tbody td {
   color: #333;
   padding: 12px;
   line-height:24px;
+}
+table tbody td b {
+  background:yellow;
 }
 th button.sortButton {
   cursor:pointer;

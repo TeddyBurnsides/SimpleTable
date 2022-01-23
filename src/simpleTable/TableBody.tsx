@@ -18,10 +18,11 @@ const TableBody = ({data, sortInfo, maxRows, showAll, searchValue}: ItableBody) 
 		
 	}
 
+	// return rows, filtered by search value
 	const rowElements = rows.map((row: string[], index: number) => {
 		if (typeof searchValue === 'undefined' || searchValue === '' || rowContainsValue(row,searchValue)) {
 			
-			return <TableRow key={index} data={row} /> 
+			return <TableRow key={index} data={row} searchValue={searchValue} /> 
 		} else {
 			return null;
 		}

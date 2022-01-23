@@ -28,3 +28,57 @@ export const rowContainsValue = (row: string[], value: string): boolean => {
 	}
 	return quit;
 }
+
+export const findMatchingValueIndexes = (text: string,search: string) => {
+
+	let indexes=[]; // an array that contains the beginning index of each matching string
+
+	// loop through phrase letter by letter
+	for (let textPos=0; textPos<text.length; textPos++) {
+
+		let beginPos=null;
+		let moveToNextLetter=false
+
+		// loop through search phrase
+		for (let searchPos=0; searchPos<search.length&&!moveToNextLetter; searchPos++) {
+
+			// if value does not match, move to next letter in phrase to continue searching for string
+			if (text[textPos+searchPos].toLowerCase() !== search[searchPos].toLowerCase()) {
+				moveToNextLetter=true; 
+				break;
+			}
+
+			// if this is true, all values in search string match something in phrase
+			if (searchPos === search.length-1) beginPos=textPos;
+		}	
+
+		// if these are both not null, we found a match
+		if (beginPos !== null) indexes.push(beginPos);
+	}
+
+	// build an array where each element represents whether or not a character should be highlighted
+	let array: boolean[] = [];
+	for (let i=0; i<indexes.length; i++) {
+		for (let j=0; j<search.length; j++) {
+			array[indexes[i]+j]=true;
+		}
+	}
+
+	return array;
+
+}
+
+export const buildHighlightedText = (array: boolean[], string: string) => {
+
+	let highlightedText='';
+
+	for (let i=0; i<string.length; i++) {
+		if (array[i] === true) {
+			highlightedText=highlightedText + '<b>'+ string[i] + '</b>';
+		} else {
+			highlightedText=highlightedText + string[i];
+		}
+	}
+
+	return highlightedText;
+}
