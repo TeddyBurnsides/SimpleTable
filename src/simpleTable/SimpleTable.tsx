@@ -3,35 +3,21 @@ import TableBody from './TableBody';
 import TableFooter from './TableFooter';
 import SearchTable from './SearchTable';
 import { useState } from 'react';
-import { Direction } from './types/sortDirection';
 import { Itable } from './types/interfaces';
+import { debounce, initColumnSortData, resetSortInfo } from './utils';
 
 const SimpleTable = ({data}: Itable) => {
 	
 	
-	let initSortData = new Array(data.columns.length);
-	for (let i=0; i<initSortData.length; i++) {
-		initSortData[i] = {enabled: false, column: i, direction:Direction.Desc}
-	}
-
+	const initSortData = initColumnSortData(data.columns.length);
 	const [sortInfo, setSortInfo] = useState(initSortData);
 
 	const [allRowsVisible, makeAllRowsVisible] = useState(false);
 
-	const toggleSortDirection = (event: React.ChangeEvent<HTMLButtonElement>, column: number) => {
+	const toggleSortDirection = (event: React.ChangeEvent<HTMLButtonElement>, columnToSortByNow: number) => {
 		event.preventDefault();
-
-		let array = [...sortInfo];
-		for (let i=0; i<array.length; i++) {
-			if (column === i) {
-				array[i].enabled = true;
-				array[i].direction = (sortInfo[i].direction === Direction.Asc) ? Direction.Desc : Direction.Asc;
-			} else {
-				array[i].enabled = false;
-			}
-		}
-
-		setSortInfo([...array])
+		let newSortInfo = resetSortInfo(sortInfo, columnToSortByNow)
+		setSortInfo([...newSortInfo])
 	}
 	
 	const showAllRows = (event: React.ChangeEvent<HTMLButtonElement>) => {
@@ -41,9 +27,9 @@ const SimpleTable = ({data}: Itable) => {
 
 	const [ searchValue, setSearchValue ] = useState<string | undefined>(undefined);
 
-	const triggerSearch = (value: string) => {
+	const triggerSearch = debounce((value: string) => {
 		setSearchValue(value);
-	}
+	}, 200); // 200 ms
 
 	return (
 		<>

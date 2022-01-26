@@ -1,4 +1,5 @@
 import {Direction} from './types/sortDirection';
+import {IsortInfo} from './types/interfaces';
 
 /**Truncate data to only show desired number of rows */
 export const truncate = (rows: string[][], numberOfRowsToShow?: number) => {
@@ -21,7 +22,10 @@ export const sort = (rows: string[][], direction: Direction, columnToSortBy: num
 	
 }
 
-export const rowContainsValue = (row: string[], value: string): boolean => {
+export const rowContainsValue = (row: string[], value: string | undefined): boolean => {
+
+	if (typeof value === 'undefined') return false;
+
 	let quit = false;
 	for (let i=0; i<row.length&&!quit; i++) {
 		if (row[i].toLowerCase().includes(value.toLowerCase())) quit=true;
@@ -81,4 +85,43 @@ export const buildHighlightedText = (array: boolean[], string: string) => {
 	}
 
 	return highlightedText;
+}
+
+export const debounce = (func: Function, timeout: number) => {
+	let timer: ReturnType<typeof setTimeout>;
+	return (...args: any) => {
+		clearTimeout(timer);
+		timer = setTimeout(() => { 
+			func.apply(this, args); 
+		}, timeout);
+	};
+}
+
+export const initColumnSortData = (numberOfColumns: number): IsortInfo[] => {
+	let initSortData = new Array(numberOfColumns);
+	for (let i=0; i<initSortData.length; i++) {
+		initSortData[i] = {enabled: false, column: i, direction:Direction.Desc}
+	}
+	return initSortData;
+}
+
+export const resetSortInfo = (sortInfo: IsortInfo[], columnToSortByNow: number) => {
+	let array = [...sortInfo];
+	for (let i=0; i<array.length; i++) {
+		if (columnToSortByNow === i) {
+			array[i].enabled = true;
+			array[i].direction = (sortInfo[i].direction === Direction.Asc) ? Direction.Desc : Direction.Asc;
+		} else {
+			array[i].enabled = false;
+		}
+	}
+	return array
+}
+
+export const valueEmpty = (value: string | undefined) => {
+	if (typeof value === 'undefined' || value === '') {
+		return true;
+	} else {
+		return false;
+	}
 }
