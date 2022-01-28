@@ -2,7 +2,7 @@
 
 A table component for your React JS project that allows for column sorting and searching. 
 
-![Screenshot of Simple Table](https://github.com/theowiersema/SimpleTable/blob/main/public/screenshot.png?raw=true)
+![Screenshot of Simple Table](https://github.com/theowiersema/SimpleTable/blob/main/public/screenshot2.png?raw=true)
 
 Check out [a working demo](https://minimal-react-table.herokuapp.com/) (with added styles) or view the [component implementation code](https://github.com/theowiersema/SimpleTable/blob/main/src/App.tsx).
 
