@@ -46,6 +46,11 @@ export const findMatchingValueIndexes = (text: string,search: string) => {
 		// loop through search phrase
 		for (let searchPos=0; searchPos<search.length&&!moveToNextLetter; searchPos++) {
 
+			// don't search past the end of a word (and cause an undefined array index error)
+			if (textPos+searchPos>=text.length) {
+				moveToNextLetter=true;
+				break;
+			}
 			// if value does not match, move to next letter in phrase to continue searching for string
 			if (text[textPos+searchPos].toLowerCase() !== search[searchPos].toLowerCase()) {
 				moveToNextLetter=true; 

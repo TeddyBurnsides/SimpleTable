@@ -54,7 +54,7 @@ h1 {
   padding:0;
   line-height:40px;
   margin:0;
-  font-size:18pt;
+  font-size:16pt;
   letter-spacing:-.5px;
 }
 #tools {
@@ -64,19 +64,20 @@ h1 {
 }
 input[type="search"] {
   background:#fff;
-  border:1px solid #264653;
+  border:1px solid #B6A4A1;
   padding:8px 16px;
   font-size:11pt;
   margin:0;
   width:300px;
   color:#264653;
   border-radius:3px;
-  opacity:.7;
   height:40px;
+  background:#f9f5f4;
 }
 input[type="search"]:focus {
-  opacity:1;
   outline:none;
+  background:#fff;
+  border-color:#9F8F8D;
 }
 table {
   border-collapse: separate;

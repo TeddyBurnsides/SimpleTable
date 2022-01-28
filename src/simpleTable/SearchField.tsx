@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { IsearchTable } from "./types/interfaces";
 
-const SearchTable = ({triggerSearch, enabled}: IsearchTable) => {
+const SearchField = ({triggerSearch, enabled}: IsearchTable) => {
 
 	const [searchValue, setSearchValue] = useState('');
 
@@ -24,4 +24,4 @@ const SearchTable = ({triggerSearch, enabled}: IsearchTable) => {
 	}
 }
 
-export default SearchTable;
+export default SearchField;

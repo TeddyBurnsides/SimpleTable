@@ -22,13 +22,13 @@ const App = () => {
       }
     ],
     rows: [
-      ['Teddy Burnsides', '123 Bobs Way', 'theodore@gmail.com', '3098900178'],
-      ['Test Person', '345 Testing Ave', 'test@yaho.com', '1234561234'],
-      ['New Name', '445 Segway', '', '1237891234'],
-      ['Zan','', 'z@gmail.com','4569081234'],
-      ['Michael','12 Route 13', 'Test@gmail.com','6096781234'],
-      ['Bobby', '', 'bob@gmail.com', ''],
-      ['T-rex', '', 'tyrex@gmail.com', '9997891234']
+      ['Rufus Garrett ', '123 Alice Way', 'rufus@simpletable.com', '309-789-1234'],
+      ['Ramona Parker', '345 Testing Ave', 'test@yaho.com', '123-456-1234'],
+      ['Freda Watson', '445 Segway', '', '123-789-1234'],
+      ['Jeff Peters ','124 Willow Pathway', 'jeff@simpletable.com','456-908-1234'],
+      ['Jessica Fowler','12 Route 5', 'jessica@simpletable.com','609-678-1234'],
+      ['Terrell Kennedy ', '77 Oak Street', 'terrell@simpletable.com', ''],
+      ['Alonzo Curtis', '', 'tyrex@simpletable.com', '999-789-1234']
     ],
     maxRows: 3,
     sortButtonText: {

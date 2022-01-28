@@ -1,7 +1,7 @@
 import TableHeader from './TableHeader';
 import TableBody from './TableBody';
 import TableFooter from './TableFooter';
-import SearchTable from './SearchTable';
+import SearchField from './SearchField';
 import { useState } from 'react';
 import { Itable } from './types/interfaces';
 import { debounce, initColumnSortData, resetSortInfo } from './utils';
@@ -35,7 +35,7 @@ const SimpleTable = ({data}: Itable) => {
 		<>
 			<div id="tools">
 				<h1>{data.title}</h1>
-				<SearchTable
+				<SearchField
 					triggerSearch={triggerSearch}
 					enabled={data.enableSearch}
 				/>
