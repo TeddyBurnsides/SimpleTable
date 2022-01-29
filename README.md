@@ -22,8 +22,8 @@ Add the component to your React project:
 
 Where the `tableData` variable passed to the `data` prop is an object with the following properties:
 
-* [`columns`](#columns)
-* [`rows`](#rows)
+* [`columns`](#columns) (Required)
+* [`rows`](#rows) (Required)
 * [`maxrows`](#maxrows)
 * [`sortButtonText`](#sortButtonText)
 * [`enableSearch`](#enableSearch)
@@ -33,11 +33,11 @@ Where the `tableData` variable passed to the `data` prop is an object with the f
 
 ### `columns`
 
-**Type:** `{label: string, sortable: boolean}`
+**Type:** `[{label: string, sortable: boolean}]`
 
 **Required:** Yes
 
-An array of column names and a boolean flag that indicates if the columns should allow sorting. 
+An array of objects, each with a label and a sortable property. The `label` property contains the column title, and the `sortable` property indicates if the sorting button will be enabled for this columns.
 
 Example: 
 
@@ -64,7 +64,7 @@ columns: [
 
 **Required:** Yes
 
-A 2 dimensional array of "rows" of data, with the second level of array being each row. 
+A 2 dimensional array of "rows" of data, with the second level array being each row. 
 
 Example: 
 
@@ -113,7 +113,6 @@ If true, a search field will be visible to filter rows by a user-entered string.
 **Type:** `string`
 
 **Required:** No
-
 
 **Default:** `''`
 
