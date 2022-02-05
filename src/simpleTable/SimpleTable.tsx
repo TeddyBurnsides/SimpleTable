@@ -27,9 +27,10 @@ const SimpleTable = ({data}: Itable) => {
 
 	const [ searchValue, setSearchValue ] = useState<string | undefined>(undefined);
 
+	if (typeof data.debounce === 'undefined') data.debounce=200; // default to 200 ms
 	const triggerSearch = debounce((value: string) => {
 		setSearchValue(value);
-	}, 200); // 200 ms
+	}, data.debounce); // 200 ms
 
 	return (
 		<>

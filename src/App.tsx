@@ -36,7 +36,8 @@ const App = () => {
       desc: '▼'
     },
     enableSearch: true,
-    title: 'Simple Table Demo'
+    title: 'Simple Table Demo',
+    debounce: 200
   }
   return (
     <SimpleTable data={tableData} />

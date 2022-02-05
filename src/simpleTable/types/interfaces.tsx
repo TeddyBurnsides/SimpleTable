@@ -57,7 +57,8 @@ interface Idata {
 	maxRows?: number,
 	sortButtonText?: IsortButtonText,
 	title?: string,
-	enableSearch?: boolean
+	enableSearch?: boolean,
+	debounce?: number
 }
 
 export interface Itable {

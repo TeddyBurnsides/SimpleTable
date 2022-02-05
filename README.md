@@ -4,7 +4,7 @@ A table component for your React JS project that allows for column sorting and s
 
 ![Screenshot of Simple Table](https://github.com/theowiersema/SimpleTable/blob/main/public/screenshot2.png?raw=true)
 
-Check out [a working demo](https://minimal-react-table.herokuapp.com/) (with added styles) or view the [component implementation code](https://github.com/theowiersema/SimpleTable/blob/main/src/App.tsx).
+Check out [a working demo](https://minimal-react-table.herokuapp.com/) (with added styling). 
 
 ## How to install
 
@@ -28,6 +28,9 @@ Where the `tableData` variable passed to the `data` prop is an object with the f
 * [`sortButtonText`](#sortButtonText)
 * [`enableSearch`](#enableSearch)
 * [`title`](#title)
+* [`debounce`](#debounce)
+
+View the code of the demo's implementation [here](https://github.com/theowiersema/SimpleTable/blob/main/src/App.tsx).
 
 ## Prop Documentation
 
@@ -117,3 +120,13 @@ If true, a search field will be visible to filter rows by a user-entered string.
 **Default:** `''`
 
 Define an `<h1>` title to be displayed above the table.
+
+### `debounce`
+
+**Type:** `number`
+
+**Required:** No
+
+**Default:** 200
+
+The number of milliseconds to debounce the search field. (I.e. how long to wait to show search results after a user has stopped typing. This avoids unnecessary processing.) 
